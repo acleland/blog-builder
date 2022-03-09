@@ -2,15 +2,24 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor() {
+export default function Editor(props) {
   return (
     <div className="editor">
       <div className="form-control">
-        <input name="title" type="text" />
+        <input
+          name="title"
+          type="text"
+          value={props.title}
+          onChange={(e) => props.setTitle(e.target.value)}
+        />
         <label htmlFor="title">Title</label>
       </div>
       <div className="form-control">
-        <input type="text" />
+        <input
+          type="text"
+          value={props.subtitle}
+          onChange={(e) => props.setSubtitle(e.target.value)}
+        />
         <label>Subtitle</label>
       </div>
       <div className="form-control">
