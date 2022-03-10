@@ -23,7 +23,7 @@ export default function Editor(props) {
         <label>Subtitle</label>
       </div>
       <div className="form-control">
-        <select>
+        <select value={props.font} onChange={(e) => props.setFont(e.target.value)}>
           <option value="architect">{"Architect's Daughter"}</option>
           <option value="comforter">Comforter</option>
           <option value="fredoka">Fredoka</option>
@@ -37,7 +37,11 @@ export default function Editor(props) {
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div
+          className="radio-group"
+          value={props.align}
+          onChange={(e) => props.setAlign(e.target.value)}
+        >
           <label>
             <input name="align" type="radio" value="left" />
             <i className="ri-align-left"></i>
@@ -53,7 +57,11 @@ export default function Editor(props) {
         </div>
       </div>
       <div className="form-control">
-        <textarea style={{ height: '250px' }} />
+        <textarea
+          style={{ height: '250px' }}
+          value={props.text}
+          onChange={(e) => props.setText(e.target.value)}
+        />
         <label>Text</label>
       </div>
     </div>
