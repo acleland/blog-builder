@@ -2,6 +2,8 @@ import React from 'react';
 
 import './Editor.css';
 
+// Note: I decided not to destructure props, because i got tired of adding parameters
+// into the function argument. I do know how to though.
 export default function Editor(props) {
   return (
     <div className="editor">
